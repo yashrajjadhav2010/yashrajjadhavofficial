@@ -60,6 +60,24 @@ export default function App() {
         </div>
       </nav>
 
+      {/* Floating UI for Desktop */}
+      <div className="hidden lg:flex fixed left-8 bottom-0 flex-col items-center gap-6 z-40">
+        <div className="w-[1px] h-24 bg-dark/20" />
+        <span className="[writing-mode:vertical-lr] text-[10px] uppercase tracking-[0.3em] font-mono text-dark/40 py-4 rotate-180">
+          Scroll to explore
+        </span>
+      </div>
+
+      <div className="hidden lg:flex fixed right-8 bottom-8 flex-col items-center gap-8 z-40 mix-blend-difference text-white">
+        <motion.a whileHover={{ scale: 1.2, color: "#ff5f1f" }} href="#" title="Github">
+          <Github size={20} />
+        </motion.a>
+        <motion.a whileHover={{ scale: 1.2, color: "#ff5f1f" }} href="mailto:yashrajjadhav2010@gmail.com" title="Email">
+          <Mail size={20} />
+        </motion.a>
+        <div className="w-px h-12 bg-white/40 mt-2" />
+      </div>
+
       {/* Hero Section */}
       <header className="relative min-h-[110vh] md:h-screen flex flex-col justify-center md:justify-end p-6 md:p-12 bg-dark text-white overflow-hidden pt-24 md:pt-0">
         {/* Background Decorative Text */}
@@ -97,6 +115,22 @@ export default function App() {
               >
                 Projects <Layout size={18} />
               </motion.a>
+            </div>
+
+            {/* Desktop Stats */}
+            <div className="hidden lg:flex gap-12 mt-16 pt-8 border-t border-white/10">
+              <div>
+                <span className="block text-3xl font-display text-brand">02+</span>
+                <span className="text-[10px] uppercase tracking-widest text-white/40 font-mono">Live Sites</span>
+              </div>
+              <div>
+                <span className="block text-3xl font-display text-brand">11th</span>
+                <span className="text-[10px] uppercase tracking-widest text-white/40 font-mono">Grade</span>
+              </div>
+              <div>
+                <span className="block text-3xl font-display text-brand">100%</span>
+                <span className="text-[10px] uppercase tracking-widest text-white/40 font-mono">Commitment</span>
+              </div>
             </div>
           </motion.div>
 
@@ -143,8 +177,13 @@ export default function App() {
       </header>
 
       {/* About Section */}
-      <section id="about" className="py-32 px-6 md:px-12 bg-white flex flex-col items-center">
-        <div className="max-w-4xl w-full">
+      <section id="about" className="py-32 px-6 md:px-12 bg-white flex flex-col items-center relative overflow-hidden">
+        {/* Background Decorative element for Desktop */}
+        <div className="absolute top-0 left-0 w-full h-full opacity-[0.03] pointer-events-none hidden lg:block">
+          <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(#000_1px,transparent_1px)] [background-size:40px_40px]" />
+        </div>
+
+        <div className="max-w-4xl w-full relative z-10">
           <motion.div 
              initial={{ opacity: 0, y: 50 }}
              whileInView={{ opacity: 1, y: 0 }}
@@ -166,18 +205,50 @@ export default function App() {
                 Now, I spend my time crafting websites that aren't just functional but visually striking. 
                 Whether it's building portfolio frames or educational platforms, I'm always looking for the next challenge.
               </p>
-              <div className="grid grid-cols-2 gap-4 mt-8">
-                <div className="border border-dark/10 p-6 rounded-2xl hover:border-brand transition-colors">
-                  <h3 className="text-2xl mb-2">Web Design</h3>
-                  <p className="text-sm font-mono text-dark/60">Crafting unique visual identities for every project.</p>
-                </div>
-                <div className="border border-dark/10 p-6 rounded-2xl hover:border-brand transition-colors">
-                  <h3 className="text-2xl mb-2">Frontend Dev</h3>
-                  <p className="text-sm font-mono text-dark/60">Bringing designs to life with React and Tailwind CSS.</p>
-                </div>
-              </div>
             </div>
           </motion.div>
+        </div>
+      </section>
+
+      {/* Skills & Tech Section */}
+      <section className="py-24 bg-light border-y border-dark/5">
+        <div className="max-w-7xl mx-auto px-6 md:px-12">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+            <div>
+              <h3 className="text-3xl uppercase mb-4 flex items-center gap-2">
+                <Code className="text-brand" /> Technical <span className="text-brand">Stack</span>
+              </h3>
+              <p className="text-dark/60 font-light max-w-sm">The tools and languages I use to bring ideas to life.</p>
+            </div>
+            <div className="lg:col-span-2 grid grid-cols-2 md:grid-cols-4 gap-4">
+              {[
+                { name: "React", level: "90%" },
+                { name: "Next.js", level: "85%" },
+                { name: "Tailwind", level: "95%" },
+                { name: "TypeScript", level: "80%" },
+                { name: "Framer Motion", level: "88%" },
+                { name: "Vite", level: "90%" },
+                { name: "Firebase", level: "75%" },
+                { name: "UI/UX Design", level: "85%" }
+              ].map((skill) => (
+                <motion.div 
+                  key={skill.name}
+                  whileHover={{ y: -5 }}
+                  className="bg-white p-4 rounded-xl border border-dark/5 shadow-sm hover:shadow-md transition-all"
+                >
+                  <p className="font-display uppercase text-sm mb-2">{skill.name}</p>
+                  <div className="h-1 bg-dark/5 rounded-full overflow-hidden">
+                    <motion.div 
+                      initial={{ width: 0 }}
+                      whileInView={{ width: skill.level }}
+                      transition={{ duration: 1, delay: 0.2 }}
+                      className="h-full bg-brand"
+                    />
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
