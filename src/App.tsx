@@ -79,7 +79,7 @@ export default function App() {
       </div>
 
       {/* Hero Section */}
-      <header className="relative min-h-[110vh] md:h-screen flex flex-col justify-center md:justify-end p-6 md:p-12 bg-dark text-white overflow-hidden pt-24 md:pt-0">
+      <header className="relative min-h-screen flex flex-col justify-start p-6 md:p-12 bg-dark text-white overflow-hidden pt-48 md:pt-64">
         {/* Background Decorative Text */}
         <motion.div 
           style={{ rotate }}
@@ -88,13 +88,23 @@ export default function App() {
           <div className="w-full h-full border-[10vw] border-white rounded-full" />
         </motion.div>
 
-        <div className="relative z-10 max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center lg:items-center pb-24 md:pb-32">
+        <div className="relative z-10 max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-start lg:items-start pb-24 md:pb-32">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="text-center lg:text-left h-full flex flex-col justify-center"
+            className="text-center lg:text-left h-full flex flex-col justify-start"
           >
+            {/* Top Element to prevent cutoff and add detail */}
+            <div className="flex items-center justify-center lg:justify-start gap-4 mb-12">
+              <div className="flex items-center gap-2 px-3 py-1 bg-white/5 border border-white/10 rounded-full">
+                <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
+                <span className="text-[10px] uppercase tracking-widest font-mono text-white/60">Available for projects</span>
+              </div>
+              <div className="hidden md:block w-px h-4 bg-white/20" />
+              <span className="hidden md:block text-[10px] uppercase tracking-widest font-mono text-white/40">Open to innovate</span>
+            </div>
+
             <div className="flex items-center justify-center lg:justify-start gap-3 mb-6">
               <span className="w-8 md:w-12 h-[1px] bg-brand" />
               <span className="text-brand font-mono text-[10px] md:text-sm uppercase tracking-[0.3em]">Developer & Student</span>
