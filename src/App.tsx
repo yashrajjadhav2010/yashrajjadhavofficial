@@ -130,7 +130,7 @@ export default function App() {
             {/* Desktop Stats */}
             <div className="hidden lg:flex gap-12 mt-16 pt-8 border-t border-white/10">
               <div>
-                <span className="block text-3xl font-display text-brand">02+</span>
+                <span className="block text-3xl font-display text-brand">03+</span>
                 <span className="text-[10px] uppercase tracking-widest text-white/40 font-mono">Live Sites</span>
               </div>
               <div>
@@ -207,8 +207,9 @@ export default function App() {
             </div>
             <div className="md:col-span-8 flex flex-col gap-6 text-xl text-dark/80 font-light leading-relaxed">
               <p>
-                Hey there! I'm <span className="font-bold text-dark italic underline decoration-brand underline-offset-4">Yashraj Jadhav</span>. 
-                balancing the rigors of high school with my passion for creating digital experiences.
+                Hey there! I'm <span className="font-bold text-dark italic underline decoration-brand underline-offset-4">Yashraj Madhav Jadhav</span>. 
+                Optimizing my creative potential while balancing the rigors of high school as a Class 11th student. 
+                As the son of <span className="text-dark font-medium">Madhavrao Jadhav</span>, I've inherited a drive for excellence and innovation.
               </p>
               <p>
                 My journey into the world of web development started with a simple curiosity: how are things built? 
