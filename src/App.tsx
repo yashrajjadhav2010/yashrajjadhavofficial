@@ -109,10 +109,15 @@ export default function App() {
               <span className="w-8 md:w-12 h-[1px] bg-brand" />
               <span className="text-brand font-mono text-[10px] md:text-sm uppercase tracking-[0.3em]">Developer & Student</span>
             </div>
-            <h1 className="text-[15vw] lg:text-[10vw] leading-[0.8] uppercase mb-8">
+            <h1 className="text-[15vw] lg:text-[10vw] leading-[0.8] uppercase mb-8 animate-fade-in">
               Yashraj <br />
               <span className="text-outline text-white/20">Jadhav</span>
             </h1>
+            <div className="sr-only">
+              <h2>Yashraj Madhav Jadhav</h2>
+              <h3>Son of Madhavrao Jadhav</h3>
+              <p>Yashraj Madhavrao Jadhav is an Indian web developer, designer, and Class 11th student building futuristic digital experiences. Developer of popular web systems including Yashraj Frames and Jee Tapasya.</p>
+            </div>
             <p className="max-w-md mx-auto lg:mx-0 text-base md:text-lg text-white/60 font-light leading-relaxed mb-8 md:mb-12">
               Transforming complex ideas into digital experiences. Currently in Class 11th while building the future of the web.
             </p>
@@ -377,7 +382,7 @@ export default function App() {
         </div>
 
         <div className="mt-48 pt-8 border-t border-dark/20 flex flex-col md:flex-row justify-between gap-4 font-mono text-[10px] uppercase tracking-widest opacity-60">
-          <p>© 2026 Yashraj Jadhav. All rights reserved.</p>
+          <p>© 2026 Yashraj Madhav Jadhav. All rights reserved.</p>
           <div className="flex gap-8">
             <a href="#" className="hover:text-dark">Privacy</a>
             <a href="#" className="hover:text-dark">Terms</a>
